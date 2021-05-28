@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form</title>
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+	<script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-auth.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">		
+<style>
+	/*set border to the form*/
+	
+	div.formType {
+		border: 3px solid #f1f1f1;
+	}
+	/*assign full width inputs*/
+	
+	input[type=text]
+	{
+		width: 100%;
+		padding: 12px 20px;
+		margin: 8px 0;
+		display: inline-block;
+		border: 1px solid #ccc;
+		box-sizing: border-box;
+	}
+	
+	/*set a style for the buttons*/
+	button {
+		background-color: #4CAF50;
+		color: white;
+		padding: 14px 20px;
+		margin: 8px 0;
+		border: none;
+		cursor: pointer;
+		width: 45%;
+		border-radius: 25px;
+	}
+	button.right{
+		float: right;
+	}
+	/* set a hover effect for the button*/
+	button:hover {
+		opacity: 0.85;
+	}
+	
+	
+	/*centre the display image inside the container*/
+	
+	.imgcontainer {
+		text-align: center;
+		margin: 24px 0 12px 0;
+	}
+	
+	/*set image properties*/
+	
+	img.avatar {
+		width: 40%;
+		border-radius: 50%;
+	}
+	/*set padding to the container*/
+	
+	.container {
+		padding: 16px;
+	}
+
+	div.main {
+		background-color: lightgrey;
+		width: 300px;
+		border: 10px solid green;
+		padding: 35px;
+		margin: auto;
+		margin-top: 35px;
+        }
+</style>
+</head>
+<body>
+	<div id="dashboard">
+		<div id="userDetails"></div>
+	  </div>
+<div class="main">	
+	<!--Step 1 : Adding HTML-->
+	<div class="formType">
+		<div class="imgcontainer">
+			<img src=
+"https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws.com%2Fappforest_uf%2Ff1501583011344x476890866411849860%2FLogo_dark.png?w=96&h=49&auto=compress&dpr=1.5&fit=max"
+				alt="Avatar" class="avatar">
+		</div>
+
+		<div class="container">
+			<label><b>First name</b></label>
+			<input type="text" placeholder="Enter First name" name="uname" required>
+
+			<label><b>Last name</b></label>
+			<input type="text" placeholder="Enter Last name" name="psw">
+
+			<button class="left" onclick="Login()">Login</button>
+			<button class="right" onclick="Logout()">Logout</button>
+		</div>
+
+		
+	</div>
+</div>
+<script>
+ // Your web app's Firebase configuration
+ var firebaseConfig = {
+    apiKey: "AIzaSyBTpTLPUDGoBKyDDSb488QzRfmbcjuQfWw",
+    authDomain: "form-1ee2f.firebaseapp.com",
+    projectId: "form-1ee2f",
+    storageBucket: "form-1ee2f.appspot.com",
+    messagingSenderId: "593876709394",
+    appId: "1:593876709394:web:749461c84b5ecddb97e8cb"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+
+
+  //doing by myself
+  //start
+  //var provider = new firebase.auth.GoogleAuthProvider();
+
+  //signUp()
+  let provider = new firebase.auth.GoogleAuthProvider()
+
+  function Login(){
+    console.log('Login Btn Call')
+    firebase.auth().signInWithPopup(provider).then(res=>{
+      console.log(res.user)
+      showUserDetails(res.user)
+    }).catch(e=>{
+      console.log(e)
+    })
+  }
+
+  function Logout(){
+    console.log('Logout Btn Call')
+    firebase.auth().signOut().then(()=>{
+      document.getElementById('dashboard').style.display="none"
+    }).catch(e=>{
+      console.log(e)
+    })
+  }
+
+
+  function showUserDetails(user){
+    document.getElementById('userDetails').innerHTML = `
+      <h1><i>User details :</i></h1>
+      <img src="${user.photoURL}" style="width:10%">
+      <p>Name: ${user.displayName}</p>
+      <p>Email: ${user.email}</p>
+    `
+  }
+
+  function checkAuthState(){
+    firebase.auth().onAuthStateChanged(user=>{
+      if(user){
+        document.getElementById('dashboard').style.display="block"
+        showUserDetails(user)
+      }else{
+
+      }
+    })
+  }
+
+  checkAuthState()
+
+
+    
+
+</script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+[debug] [2021-05-28T11:17:27.053Z] ----------------------------------------------------------------------
+[debug] [2021-05-28T11:17:27.055Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\91969\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2021-05-28T11:17:27.055Z] CLI Version:   9.12.0
+[debug] [2021-05-28T11:17:27.056Z] Platform:      win32
+[debug] [2021-05-28T11:17:27.056Z] Node Version:  v14.17.0
+[debug] [2021-05-28T11:17:27.056Z] Time:          Fri May 28 2021 16:47:27 GMT+0530 (India Standard Time)
+[debug] [2021-05-28T11:17:27.057Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-05-28T11:17:27.063Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-05-28T11:17:27.063Z] > authorizing via signed-in user (shivam314kr@gmail.com)
+[debug] [2021-05-28T11:17:27.063Z] [iam] checking project form-1ee2f for permissions ["firebase.projects.get"]
+[debug] [2021-05-28T11:17:27.065Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/form-1ee2f:testIamPermissions  
+ {"permissions":["firebase.projects.get"]}
+[debug] [2021-05-28T11:17:27.829Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Fri, 28 May 2021 11:17:20 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=266","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-05-28T11:17:27.835Z] > refreshing access token with scopes: []
+[debug] [2021-05-28T11:17:27.836Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-05-28T11:17:28.349Z] <<< HTTP RESPONSE 200 {"date":"Fri, 28 May 2021 11:17:21 GMT","expires":"Mon, 01 Jan 1990 00:00:00 GMT","pragma":"no-cache","cache-control":"no-cache, no-store, max-age=0, must-revalidate","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-05-28T11:17:28.381Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/form-1ee2f [none]
+[debug] [2021-05-28T11:17:29.066Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/form-1ee2f 200
+[debug] [2021-05-28T11:17:29.066Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/form-1ee2f {"projectId":"form-1ee2f","projectNumber":"593876709394","displayName":"form","name":"projects/form-1ee2f","resources":{"hostingSite":"form-1ee2f"},"state":"ACTIVE"}
+[info] 
+[info] === Serving from 'C:\Users\91969\Desktop\form'...
+[info] 
+[debug] [2021-05-28T11:17:29.074Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/form-1ee2f/sites 
+[debug] [2021-05-28T11:17:31.309Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/form-1ee2f/sites 200
+[debug] [2021-05-28T11:17:31.310Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/form-1ee2f/sites {"sites":[{"name":"projects/593876709394/sites/form-1ee2f","defaultUrl":"https://form-1ee2f.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2021-05-28T11:17:31.311Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/form-1ee2f/webApps/-/config [none]
+[debug] [2021-05-28T11:17:33.253Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/form-1ee2f/webApps/-/config 200
+[debug] [2021-05-28T11:17:33.253Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/form-1ee2f/webApps/-/config {"projectId":"form-1ee2f","appId":"1:593876709394:web:749461c84b5ecddb97e8cb","storageBucket":"form-1ee2f.appspot.com","apiKey":"AIzaSyBTpTLPUDGoBKyDDSb488QzRfmbcjuQfWw","authDomain":"form-1ee2f.firebaseapp.com","messagingSenderId":"593876709394"}
+[info] i  hosting: Serving hosting files from: public {"metadata":{"emulator":{"name":"hosting"},"message":"Serving hosting files from: \u001b[1mpublic\u001b[22m"}}
+[info] +  hosting: Local server: http://localhost:5000 {"metadata":{"emulator":{"name":"hosting"},"message":"Local server: \u001b[4m\u001b[1mhttp://localhost:5000\u001b[22m\u001b[24m"}}
+[info] i  hosting: 127.0.0.1 - - [28/May/2021:11:17:49 +0000] "GET / HTTP/1.1" 200 3921 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [28/May/2021:11:17:49 +0000] \"GET / HTTP/1.1\" 200 3921 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36\""}}
